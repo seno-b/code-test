@@ -22,11 +22,11 @@ Public 메서드 void add (char c)-주어진 값을 현재 값에 추가합니�
 TextInput에서 상속 숫자가 아닌 각 문자가 무시되도록 add 메서드를 재정의합니다. 예를 들어 다음 코드는 "10"을 출력해야합니다.
 
 CODE.
-TextInput input = new NumericInput();
-input.add('1');
-input.add('a');
-input.add('0');
-System.out.println(input.getValue());
+    TextInput input = new NumericInput();
+    input.add('1');
+    input.add('a');
+    input.add('0');
+    System.out.println(input.getValue());
 
 
  */
@@ -34,22 +34,34 @@ public class UserInput {
 
 
     public static class TextInput{
-        String str = "";
-        public void add(char ch){
-            str += ch;
+        String str;
+
+        public TextInput(){
+            this.str = "";
         }
 
-        private String getValue(){
+        public void add(char c){
+            if(c != ' '){
+                str += c;
+            }
+        }
+
+        public String getValue(){
             return this.str;
         }
     }
 
     public static class NumericInput extends TextInput{
 
+        public NumericInput(){
+            super();
+        }
+
         @Override
-        public void add(char ch) {
-            if(Character.isDigit(ch)){
-                super.add(ch);
+        public void add(char c) {
+            if(Character.isDigit(c)){
+                //super.add(ch);
+                this.str += c;
             }
         }
     }
@@ -59,6 +71,13 @@ public class UserInput {
         input.add('1');
         input.add('a');
         input.add('0');
+
+        input.add('g');
+        input.add('1');
+        input.add('w');
+        input.add('$');
+        input.add('!');
+        input.add(';');
         System.out.println(input.getValue());
     }
 }
