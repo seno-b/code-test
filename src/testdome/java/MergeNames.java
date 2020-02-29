@@ -16,9 +16,14 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class MergeNames {
-    public static String[] uniqueNames(String[] names1, String[] names2) {
 
-        return Stream.concat(Arrays.stream(names1), Arrays.stream(names2)).distinct().toArray(String[]::new);
+    public static String[] uniqueNames(String[] names1, String[] names2) {
+//        throw new UnsupportedOperationException("Waiting to be implemented.");
+
+        Stream tmp1 = Arrays.stream(names1);
+        Stream tmp2 = Arrays.stream(names2);
+
+        return (String[]) Stream.concat(tmp1, tmp2).distinct().toArray(String[]::new);
     }
 
     public static void main(String[] args) {
