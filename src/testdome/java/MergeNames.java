@@ -12,21 +12,13 @@ package testdome.java;
 *
 * */
 
-
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MergeNames {
     public static String[] uniqueNames(String[] names1, String[] names2) {
-        /*throw new UnsupportedOperationException("Waiting to be implemented.");*/
 
-        Stream<String> tmpNames1 = Arrays.stream(names1);
-        Stream<String> tmpNames2 = Arrays.stream(names2);
-        return Stream.concat(tmpNames1, tmpNames2).distinct().toArray(String[]::new);
+        return Stream.concat(Arrays.stream(names1), Arrays.stream(names2)).distinct().toArray(String[]::new);
     }
 
     public static void main(String[] args) {
