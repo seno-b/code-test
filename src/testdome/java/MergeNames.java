@@ -12,17 +12,18 @@ package testdome.java;
 *
 * */
 
-
 import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class MergeNames {
+
     public static String[] uniqueNames(String[] names1, String[] names2) {
         /*throw new UnsupportedOperationException("Waiting to be implemented.");*/
-        Stream names1t = Arrays.stream(names1);
-        Stream names2t = Arrays.stream(names2);
 
-        return (String[])Stream.concat(names1t, names2t).distinct().toArray(String[]::new);
+        Stream tmp1 = Arrays.stream(names1);
+        Stream tmp2 = Arrays.stream(names2);
+
+        return (String[]) Stream.concat(tmp1, tmp2).distinct().toArray(String[]::new);
     }
 
     public static void main(String[] args) {
