@@ -34,6 +34,8 @@ public class Song {
         while(next != null){
 
         }
+
+        return false;
     }
 
     public static void main(String[] args) {
