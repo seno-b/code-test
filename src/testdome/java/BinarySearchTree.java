@@ -26,6 +26,7 @@ package testdome.java;
  * n2 (값 : 2, 왼쪽 : n1, 오른쪽 : n3)
  * n3 (값 : 3, 왼쪽 : null, 오른쪽 : null)
  * n2에 루트가있는 트리는 숫자 3을 포함하므로 contains (n2, 3)에 대한 호출은 true를 리턴해야합니다.
+ * return : contains (n2,3)
  *
  */
 
