@@ -21,7 +21,7 @@ public class Branches {
     public static void main(String[] args) {
         System.out.println(Branches.count(new int[] { 1, 3, 1, -1, 3 }));
         System.out.println(Branches.count(new int[] { -1, 0, 1 }));
-        String s = new String("sleifj");
+        String s = new String("test");
         s.intern();
     }
 }
