@@ -1,5 +1,11 @@
 package programmers.java;
 
+import java.util.List;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 public class DartGame {
 
   /*
@@ -45,22 +51,45 @@ public class DartGame {
     7	1D2S3T*	59	12 + 21 * 2 + 33 * 2
 * */
   public static int solution(String dartResult) {
-    int answer = 0;
+    String[] splitStr = split(dartResult);
 
-    return answer;
+    for (int i = 0; i < splitStr.length; i++) {
+      int digit = getDigit(splitStr[i]);
+      // TODO: 잘라내서 숫자 계산 진행해야함.
+    }
+
+    return 0;
   }
 
-  public static boolean isNumeric(String ch) {
-    return ch.matches("-?\\d+(\\.\\d+)?");
+  private static String[] split(String dartResult) {
+    String regex = "\\d{1,2}([SDT])([*#])?"; // 정규 표현식 생성
+    Pattern compile = Pattern.compile(regex);
+    Matcher matcher = compile.matcher(dartResult);
+
+    List<String> collect = matcher
+        .results()
+        .map(MatchResult::group)
+        .collect(Collectors.toList());
+
+    return collect.toArray(new String[collect.size()]);
+  }
+
+  private static Integer getDigit(String str) {
+    Pattern compile = Pattern.compile("/\\d{1,2}/g");
+    Matcher matcher = compile.matcher(str);
+    return Integer.parseInt(matcher.group());
   }
 
   public static void main(String[] args) throws Exception {
     System.out.println(solution("1S2D*3T"));
-    if (solution("1S2D*3T") != 37 ||
-        solution("1D2S#10S") != 9 ||
-        solution("1D2S0T#10S") != 3) {
-      throw new Exception();
-    }
+    System.out.println(solution("1D2S#10S"));
+    System.out.println(solution("1D2S0T#10S"));
+
+//    if (solution("1S2D*3T") != 37 ||
+//        solution("1D2S#10S") != 9 ||
+//        solution("1D2S0T#10S") != 3) {
+//      throw new Exception();
+//    }
   }
 
 }
