@@ -1,4 +1,4 @@
-package programmers.java.waite;
+package kakao.hairshop.java;
 
 public class Test3 {
 

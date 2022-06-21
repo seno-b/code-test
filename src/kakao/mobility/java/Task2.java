@@ -1,4 +1,4 @@
-package kakao.java.mobility;
+package kakao.mobility.java;
 
 public class Task2 {
 

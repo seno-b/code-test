@@ -1,4 +1,4 @@
-package kakao.java.mobility;
+package kakao.mobility.java;
 
 import java.util.ArrayList;
 import java.util.HashMap;
